@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\ReseauDistribution $reseauDistribution
+ */
+?>
+<div class="row">
+    <aside class="column">
+        <div class="side-nav">
+            <h4 class="heading"><?= __('Actions') ?></h4>
+            <?= $this->Form->postLink(
+                __('Delete'),
+                ['action' => 'delete', $reseauDistribution->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $reseauDistribution->id), 'class' => 'side-nav-item']
+            ) ?>
+            <?= $this->Html->link(__('List Reseau Distribution'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+        </div>
+    </aside>
+    <div class="column-responsive column-80">
+        <div class="reseauDistribution form content">
+            <?= $this->Form->create($reseauDistribution) ?>
+            <fieldset>
+                <legend><?= __('Edit Reseau Distribution') ?></legend>
+                <?php
+                    echo $this->Form->control('Designation');
+                ?>
+            </fieldset>
+            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->end() ?>
+        </div>
+    </div>
+</div>
